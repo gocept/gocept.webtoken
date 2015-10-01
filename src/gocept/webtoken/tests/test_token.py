@@ -39,7 +39,7 @@ def test_token__decode_web_token__4():
     token = create_token('jwt-access-private', 'app')
     with pytest.raises(ValueError) as err:
         decode_token(token, 'jwt-access-public', 'access')
-    assert "Subject mismatch 'access' != u'app'" == str(err.value)
+    assert "Subject mismatch 'access' != 'app'" == str(err.value)
 
 
 def test_token__decode_web_token__5():

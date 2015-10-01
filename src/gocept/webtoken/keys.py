@@ -7,10 +7,9 @@ import zope.interface
 log = logging.getLogger(__name__)
 
 
+@zope.interface.implementer(gocept.webtoken.interfaces.ICryptographicKeys)
 class CryptographicKeys(object):
     """Provides cryptographic keys for different purposes."""
-
-    zope.interface.implements(gocept.webtoken.interfaces.ICryptographicKeys)
 
     def __init__(self, keys_dir, names):
         assert os.path.isdir(keys_dir)

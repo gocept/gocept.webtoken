@@ -4,4 +4,6 @@ gocept.webtoken
 1.0 (unreleased)
 ----------------
 
-initial release, extracted from internally used package
+* Add support for Python 3.3 and 3.4.
+
+* Initial release, extracted from internally used package.
