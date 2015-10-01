@@ -21,12 +21,6 @@ setup(
         'zope.component',
     ],
 
-    extras_require={
-        'test': [
-            'plone.testing[zca]',
-        ],
-    },
-
     author='gocept <mail@gocept.com>',
     author_email='mail@gocept.com',
     license='ZPL 2.1',

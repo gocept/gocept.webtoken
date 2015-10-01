@@ -2,26 +2,28 @@ import gocept.webtoken.keys
 import os.path
 import shutil
 import tempfile
-import unittest
+import pytest
 
 
-class CryptographicKeysTest(unittest.TestCase):
+@pytest.yield_fixture(scope='function')
+def keys_dir():
+    keys_dir = tempfile.mkdtemp()
+    yield keys_dir
+    shutil.rmtree(keys_dir)
 
-    def setUp(self):
-        self.keys_dir = tempfile.mkdtemp()
 
-    def tearDown(self):
-        shutil.rmtree(self.keys_dir)
+def test_keys__CryptographicKeys__1(keys_dir):
+    """Key can be retrieved."""
+    with open(os.path.join(keys_dir, 'jwt-access'), 'w') as f:
+        f.write('secret')
+    ck = gocept.webtoken.keys.CryptographicKeys(
+        keys_dir, ['jwt-access'])
+    assert 'secret' == ck['jwt-access-private']
 
-    def test_key_can_be_retrieved(self):
-        with open(os.path.join(self.keys_dir, 'jwt-access'), 'w') as f:
-            f.write('secret')
-        ck = gocept.webtoken.keys.CryptographicKeys(
-            self.keys_dir, ['jwt-access'])
-        self.assertEqual('secret', ck['jwt-access-private'])
 
-    def test_raises_keyerror_for_unknown_name(self):
-        ck = gocept.webtoken.keys.CryptographicKeys(
-            self.keys_dir, ['jwt-access'])
-        with self.assertRaises(KeyError):
-            ck['jwt-access-private']
+def test_keys__CryptographicKeys__2(keys_dir):
+    """Raises keyerror for unknown name."""
+    ck = gocept.webtoken.keys.CryptographicKeys(
+        keys_dir, ['jwt-access'])
+    with pytest.raises(KeyError):
+        ck['jwt-access-private']
