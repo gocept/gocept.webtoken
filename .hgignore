@@ -1,0 +1,7 @@
+syntax: glob
+
+.cache
+.installed.cfg
+bin/
+develop-eggs
+tags

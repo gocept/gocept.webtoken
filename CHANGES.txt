@@ -1,0 +1,7 @@
+gocept.webtoken
+===============
+
+1.0 (unreleased)
+----------------
+
+initial release, extracted from internally used package
