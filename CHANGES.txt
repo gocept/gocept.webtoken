@@ -4,7 +4,10 @@ gocept.webtoken
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Shortened imports for `CryptographicKeys`, `create_web_token` and
+  `decode_web_token`, which are now importable directly from `gocept.webtoken`.
+
+- Added documentation.
 
 
 1.0 (2015-10-01)

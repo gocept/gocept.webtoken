@@ -1,4 +1,4 @@
-from gocept.webtoken.interfaces import ICryptographicKeys
+from .interfaces import ICryptographicKeys
 import datetime
 import jwt
 import zope.component

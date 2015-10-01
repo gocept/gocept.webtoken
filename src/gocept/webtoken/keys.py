@@ -1,5 +1,5 @@
+from .interfaces import ICryptographicKeys
 import logging
-import gocept.webtoken.interfaces
 import os.path
 import zope.interface
 
@@ -7,7 +7,7 @@ import zope.interface
 log = logging.getLogger(__name__)
 
 
-@zope.interface.implementer(gocept.webtoken.interfaces.ICryptographicKeys)
+@zope.interface.implementer(ICryptographicKeys)
 class CryptographicKeys(object):
     """Provides cryptographic keys for different purposes."""
 
