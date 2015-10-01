@@ -1,7 +1,7 @@
 gocept.webtoken
 ===============
 
-1.1 (unreleased)
+1.1 (2015-10-01)
 ----------------
 
 - Shortened imports for `CryptographicKeys`, `create_web_token` and
