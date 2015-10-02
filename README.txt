@@ -63,12 +63,13 @@ token is placed under the key ``data``.
 Creating a Bearer Authorization header
 --------------------------------------
 
-You can create an Authorization header either from a token_dict as returned by
-create_web_token or from a token directly::
+You can create an `Bearer Authorization header`_ either from a token_dict as
+returned by create_web_token or from a token directly::
 
     >>> gocept.webtoken.create_authorization_header(b'<TOKEN>')
     ('Authorization', 'Bearer <TOKEN>')
 
+.. _`Bearer Authorization header`: https://tools.ietf.org/html/rfc6750#section-2.1
 
 Extracting a token from a Bearer Authorization header
 -----------------------------------------------------
@@ -97,3 +98,4 @@ under the key ``data``::
 
     >>> {'your': 'data'} == result['data']
     True
+
