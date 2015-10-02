@@ -60,6 +60,26 @@ The token is available under the key ``token``, while the data encoded in the
 token is placed under the key ``data``.
 
 
+Creating a Bearer Authorization header
+--------------------------------------
+
+You can create an Authorization header either from a token_dict as returned by
+create_web_token or from a token directly::
+
+    >>> gocept.webtoken.create_authorization_header(b'<TOKEN>')
+    ('Authorization', 'Bearer <TOKEN>')
+
+
+Extracting a token from a Bearer Authorization header
+-----------------------------------------------------
+
+Extract the token from a dict containing the headers of you request::
+
+    >>> request_headers = dict(Authorization='Bearer <TOKEN>')
+    >>> b'<TOKEN>' == gocept.webtoken.extract_token(request_headers)
+    True
+
+
 Decoding a token
 ----------------
 

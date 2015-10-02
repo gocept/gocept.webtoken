@@ -4,7 +4,8 @@ gocept.webtoken
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Added helper functions to create an Bearer Authorization header and extract
+  to token from it.
 
 
 1.1 (2015-10-01)
