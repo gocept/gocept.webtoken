@@ -26,14 +26,19 @@ The ``CryptographicKey`` utility
 different purposes. It loads a set of public and private keys from disk. It
 takes the filesystem path to your key files and a list of key names::
 
+    >>> import gocept.webtoken
+    >>> import pkg_resources
+    >>> path_to_keys = pkg_resources.resource_filename(
+    ...     'gocept.webtoken', 'testing/keys')
     >>> keys = gocept.webtoken.CryptographicKeys(
-    ...     '/path/to/keys', ['key1', 'key2'])
+    ...     path_to_keys, ['key1'])
 
 For each of the names, a private key file of the same name and a public key
 file (with a .pub suffix) must reside inside the keys_dir.
 
 The utility needs to be registered at the ZCA, either via a zcml file or via::
 
+    >>> import zope.component
     >>> zope.component.provideUtility(keys)
 
 
@@ -48,14 +53,12 @@ is referenced by its name and the suffix ``-private``::
     >>> payload = {'your': 'data'}
     >>> result = gocept.webtoken.create_web_token(
     ...     'key1-private', 'issuer', 'subject', expires_in, payload)
-    >>> result
-    {'token': b'<TOKEN>',
-     'data': {'nbf': 1443707771,
-              'iss': 'issuer',
-              'exp': 1443708071,
-              'sub': 'subject',
-              'data': {'your': 'data'},
-              'iat': 1443707771}}
+    >>> sorted(result.keys())
+    ['data', 'token']
+
+The token is available under the key ``token``, while the data encoded in the
+token is placed under the key ``data``.
+
 
 Decoding a token
 ----------------
@@ -66,12 +69,11 @@ is referenced by its name and the suffix ``-public``::
 
     >>> result = gocept.webtoken.decode_web_token(
     ...     result['token'], 'key1-public', 'subject')
-    >>> result
-    {'nbf': 1443707998,
-     'iss': 'issuer',
-     'exp': 1443708298,
-     'sub': 'subject',
-     'data': {'your': 'data'},
-     'iat': 1443707998}
 
 Note that the subject must match the subject given when the token was created.
+
+The result contains all data encoded in the token. You can find the payload
+under the key ``data``::
+
+    >>> {'your': 'data'} == result['data']
+    True
