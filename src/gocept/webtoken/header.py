@@ -11,12 +11,20 @@ def create_authorization_header(token_or_dict):
     return ('Authorization', 'Bearer {}'.format(token.decode('ascii')))
 
 
-def extract_token(request_headers):
-    """Extract token from Bearer Authorization header.
+def extract_token(request_headers_or_authorization_header):
+    """Extract the encoded JWT token from the Authorization header.
 
-    Takes a dict containing the Authorization header.
+    Expects that the value of this header starts with "Bearer ".
+
+    Takes a dict containing the key `Authorization` or
+    the value of the HTTP `Authorization` header.
+
     """
-    header_value = request_headers.get('Authorization')
+    if isinstance(request_headers_or_authorization_header, dict):
+        header_value = request_headers_or_authorization_header.get(
+            'Authorization')
+    else:
+        header_value = request_headers_or_authorization_header
     if header_value is None:
         raise ValueError('Missing Authorization header')
     schema, _, encoded_token = header_value.partition(' ')

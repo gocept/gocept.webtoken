@@ -27,6 +27,11 @@ def test_header__extract_token__2():
     assert b'<TOKEN>' == extract_token('Bearer <TOKEN>')
 
 
+def test_header__extract_token__3():
+    """`extract_token()` allows scheme to be lower case."""
+    assert b'<TOKEN>' == extract_token('bearer <TOKEN>')
+
+
 def test_header__extract_token__4():
     """`extract_token()`  raises ValueError if Authorization key is missing."""
     with pytest.raises(ValueError) as err:
