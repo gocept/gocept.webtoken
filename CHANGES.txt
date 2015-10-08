@@ -1,7 +1,7 @@
 gocept.webtoken
 ===============
 
-1.2 (unreleased)
+1.2 (2015-10-08)
 ----------------
 
 - Added helper functions to create a Bearer Authorization header and extract
