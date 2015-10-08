@@ -1,4 +1,5 @@
 from gocept.webtoken import create_authorization_header, extract_token
+import collections
 import pytest
 
 
@@ -53,3 +54,24 @@ def test_header__extract_token__6():
     with pytest.raises(ValueError) as err:
         extract_token(headers)
     assert 'Authorization scheme is not Bearer' == str(err.value)
+
+
+def test_header__extract_token__7():
+    """`extract_token()` extracts token from given Mapping object."""
+    class MyHeaders(collections.Mapping):
+        """Example headers implementation based on `Mapping ."""
+
+        def __init__(self, data):
+            self.data = data
+
+        def __getitem__(self, key):
+            return self.data[key]
+
+        def __iter__(self):
+            return iter(self.data)
+
+        def __len__(self):
+            return len(self.data)
+
+    headers = MyHeaders({'Authorization': 'Bearer <TOKEN>'})
+    assert b'<TOKEN>' == extract_token(headers)

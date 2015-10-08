@@ -4,7 +4,7 @@ gocept.webtoken
 1.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fix `extract_token` to accept any ``collections.Mapping`` derived object.
 
 
 1.2 (2015-10-08)

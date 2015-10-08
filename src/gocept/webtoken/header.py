@@ -1,3 +1,6 @@
+from collections import Mapping
+
+
 def create_authorization_header(token_or_dict):
     """Create a Bearer Authorization header from token.
 
@@ -20,7 +23,7 @@ def extract_token(request_headers_or_authorization_header):
     the value of the HTTP `Authorization` header.
 
     """
-    if isinstance(request_headers_or_authorization_header, dict):
+    if isinstance(request_headers_or_authorization_header, Mapping):
         header_value = request_headers_or_authorization_header.get(
             'Authorization')
     else:
