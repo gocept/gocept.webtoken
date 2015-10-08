@@ -34,7 +34,7 @@ def test_header__extract_token__3():
     headers = dict(Authorization='Foobar <TOKEN>')
     with pytest.raises(ValueError) as err:
         extract_token(headers)
-    assert 'Authorization schema is not Bearer' == str(err.value)
+    assert 'Authorization scheme is not Bearer' == str(err.value)
 
 
 def test_header__extract_token__4():
@@ -42,4 +42,4 @@ def test_header__extract_token__4():
     headers = dict(Authorization='<TOKEN>')
     with pytest.raises(ValueError) as err:
         extract_token(headers)
-    assert 'Authorization schema is not Bearer' == str(err.value)
+    assert 'Authorization scheme is not Bearer' == str(err.value)
