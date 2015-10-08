@@ -7,6 +7,8 @@ gocept.webtoken
 - Added helper functions to create a Bearer Authorization header and extract
   a token from it.
 
+- Officially support Python 3.5.
+
 
 1.1 (2015-10-01)
 ----------------
