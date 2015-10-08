@@ -28,6 +28,18 @@ setup(
 
     keywords='',
     classifiers="""\
+Development Status :: 4 - Beta
+Intended Audience :: Developers
+Natural Language :: English
+Operating System :: OS Independent
+Topic :: Internet :: WWW/HTTP
+Topic :: Internet :: WWW/HTTP :: Browsers
+Topic :: Security
+Topic :: Security :: Cryptography
+Topic :: Software Development
+Topic :: Software Development :: Libraries
+Topic :: Software Development :: Libraries :: Python Modules
+License :: OSI Approved
 License :: OSI Approved :: Zope Public License
 Programming Language :: Python
 Programming Language :: Python :: 2
@@ -35,6 +47,8 @@ Programming Language :: Python :: 2.7
 Programming Language :: Python :: 3
 Programming Language :: Python :: 3.3
 Programming Language :: Python :: 3.4
+Programming Language :: Python :: Implementation
+Programming Language :: Python :: Implementation :: CPython
 """[:-1].split('\n'),
     description=__doc__.strip(),
     long_description='\n\n'.join(open(project_path(name)).read() for name in (

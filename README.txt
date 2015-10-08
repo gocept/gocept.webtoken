@@ -7,6 +7,20 @@ This library helps you using JWT tokens with the Zope Component Architecture
 
 This package is compatible with Python version 2.7, 3.3 and 3.4.
 
+Copyright (c) 2015 gocept gmbh & co kg
+
+All Rights Reserved.
+
+This software is subject to the provisions of the Zope Public License,
+Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+FOR A PARTICULAR PURPOSE.
+
+Installation
+============
+
 This package requires ``cryptography``, which needs some install attention.
 Please refer to its `install documentation`_ for further information.
 
