@@ -7,14 +7,14 @@ def test_endtoend_1():
     """Testing create and decode of token via request header."""
     token_dict = create_web_token(
         'jwt-access-private', 'issuer', 'app', 300, data={'foo': 'bar'})
-    header = create_authorization_header(token_dict)
-    encoded_token = extract_token(dict([header]))
+    key, value = create_authorization_header(token_dict)
+    encoded_token = extract_token(value)
     decoded_token = decode_web_token(encoded_token, 'jwt-access-public', 'app')
     assert {'foo': 'bar'} == decoded_token['data']
 
 
 def test_endtoend_2():
-    """Raises ValueError if token is expired."""
+    """`decode_web_token()` raises a ValueError if the token is expired."""
     token_dict = create_web_token(
         'jwt-access-private', 'issuer', 'app', -1, data={'foo': 'bar'})
     header = create_authorization_header(token_dict)
