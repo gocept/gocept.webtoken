@@ -11,7 +11,7 @@ def project_path(*names):
 
 setup(
     name='gocept.webtoken',
-    version='1.2.1',
+    version='1.3.dev0',
 
     install_requires=[
         'cryptography',
