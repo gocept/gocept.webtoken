@@ -88,7 +88,8 @@ returned by create_web_token or from a token directly::
 Extracting a token from a Bearer Authorization header
 -----------------------------------------------------
 
-Extract the token from a dict containing the headers of you request::
+Extract the token from a dict containing the headers of you request or from the
+value of the HTTP Authorization header itself::
 
     >>> request_headers = dict(Authorization='Bearer <TOKEN>')
     >>> b'<TOKEN>' == gocept.webtoken.extract_token(request_headers)
