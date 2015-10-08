@@ -23,13 +23,18 @@ def test_header__extract_token__1():
 
 
 def test_header__extract_token__2():
+    """`extract_token()` extracts token from given value."""
+    assert b'<TOKEN>' == extract_token('Bearer <TOKEN>')
+
+
+def test_header__extract_token__4():
     """`extract_token()`  raises ValueError if Authorization key is missing."""
     with pytest.raises(ValueError) as err:
         extract_token({})
     assert 'Missing Authorization header' == str(err.value)
 
 
-def test_header__extract_token__3():
+def test_header__extract_token__5():
     """`extract_token()`  raises ValueError on wrong Authorization scheme."""
     headers = dict(Authorization='Foobar <TOKEN>')
     with pytest.raises(ValueError) as err:
@@ -37,7 +42,7 @@ def test_header__extract_token__3():
     assert 'Authorization scheme is not Bearer' == str(err.value)
 
 
-def test_header__extract_token__4():
+def test_header__extract_token__6():
     """`extract_token()`  raises ValueError if scheme is missing."""
     headers = dict(Authorization='<TOKEN>')
     with pytest.raises(ValueError) as err:

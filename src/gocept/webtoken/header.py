@@ -20,6 +20,6 @@ def extract_token(request_headers):
     if header_value is None:
         raise ValueError('Missing Authorization header')
     schema, _, encoded_token = header_value.partition(' ')
-    if schema != 'Bearer':
+    if schema.lower() != 'bearer':
         raise ValueError('Authorization scheme is not Bearer')
     return encoded_token.encode('ascii')
