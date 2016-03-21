@@ -8,4 +8,4 @@ omit = */interfaces.py
        */test_*.py
 
 [html]
-directory = htmlcov
+directory = coverage-report
