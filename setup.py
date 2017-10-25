@@ -5,10 +5,6 @@ import glob
 import os.path
 
 
-def project_path(*names):
-    return os.path.join(os.path.dirname(__file__), *names)
-
-
 setup(
     name='gocept.webtoken',
     version='1.3.dev0',
@@ -52,7 +48,7 @@ Programming Language :: Python :: Implementation
 Programming Language :: Python :: Implementation :: CPython
 """[:-1].split('\n'),
     description=__doc__.strip(),
-    long_description='\n\n'.join(open(project_path(name)).read() for name in (
+    long_description='\n\n'.join(open(name).read() for name in (
         'README.txt',
         'CHANGES.txt',
     )),
@@ -61,6 +57,6 @@ Programming Language :: Python :: Implementation :: CPython
     packages=find_packages('src'),
     package_dir={'': 'src'},
     include_package_data=True,
-    data_files=[('', glob.glob(project_path('*.txt')))],
+    data_files=[('', glob.glob('*.txt'))],
     zip_safe=False,
 )
