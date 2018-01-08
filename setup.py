@@ -17,9 +17,8 @@ setup(
     author='gocept <mail@gocept.com>',
     author_email='mail@gocept.com',
     license='ZPL 2.1',
-    url='',
-
-    keywords='',
+    url='https://bitbucket.org/gocept/gocept.webtoken',
+    keywords='jwt token webtoken ZCA',
     classifiers="""\
 Development Status :: 4 - Beta
 Intended Audience :: Developers
