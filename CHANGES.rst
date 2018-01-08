@@ -6,6 +6,9 @@ gocept.webtoken
 
 - Drop support for Python 3.3 but add it for 3.6.
 
+- Make `setup.py` compatible with newer `setuptools` versions by no longer
+  using absolute paths.
+
 
 1.2.1 (2015-10-08)
 ------------------
