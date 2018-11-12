@@ -4,7 +4,8 @@ gocept.webtoken
 2.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Made subject check optional as some systems like Keycloak use a random
+  uuid as the subject which is unknown for the decoder.
 
 
 2.0 (2018-01-08)

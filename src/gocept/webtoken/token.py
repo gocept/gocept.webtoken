@@ -32,7 +32,7 @@ def create_web_token(
             'data': args}
 
 
-def decode_web_token(token, key_name, subject, algorithms=['RS256']):
+def decode_web_token(token, key_name, subject=None, algorithms=['RS256']):
     """Decode a signed web token.
 
     token ... encoded token string
@@ -50,7 +50,7 @@ def decode_web_token(token, key_name, subject, algorithms=['RS256']):
             token, keys[key_name], algorithms=algorithms)
     except Exception as e:
         raise ValueError(e)
-    if token_content.get('sub') != subject:
+    if subject is not None and token_content.get('sub') != subject:
         raise ValueError("Subject mismatch '%s' != '%s'" % (
             subject, token_content.get('sub')))
     return token_content

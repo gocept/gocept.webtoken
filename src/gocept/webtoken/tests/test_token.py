@@ -45,6 +45,15 @@ def test_token__decode_web_token__5(token):
     # decoding
 
 
+def test_token__decode_web_token__6(token):
+    """Subject matching is optional."""
+    token_dict = token.create('jwt-access-private', 'app', data={'foo': 'bar'})
+    decoded = token.decode(token_dict, 'jwt-access-public', None)
+    assert (
+        sorted([u'iss', u'iat', u'data', u'sub', u'nbf']) ==
+        sorted(decoded.keys()))
+
+
 def test_token__create_web_token__1(token):
     """Create web token returns encoded token and token contents."""
     token_dict = token.create('jwt-access-private', 'app', data={'foo': 'bar'})
