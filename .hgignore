@@ -7,6 +7,8 @@ syntax: glob
 .installed.cfg
 .tox
 bin/
+lib/
+include/
 coverage-report/
 coverage.xml
 develop-eggs
@@ -14,3 +16,4 @@ htmlcov
 pyvenv.cfg
 tags
 testreport.xml
+pip-selfcheck.json
