@@ -7,6 +7,9 @@ gocept.webtoken
 - Made subject check optional as some systems like Keycloak use a random
   uuid as the subject which is unknown for the decoder.
 
+- Add `audience` parameter which is required to decode tokens generated
+  by Keycloak.
+
 
 2.0 (2018-01-08)
 ----------------

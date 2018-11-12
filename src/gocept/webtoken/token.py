@@ -32,7 +32,8 @@ def create_web_token(
             'data': args}
 
 
-def decode_web_token(token, key_name, subject=None, algorithms=['RS256']):
+def decode_web_token(token, key_name, subject=None, algorithms=['RS256'],
+                     audience=None):
     """Decode a signed web token.
 
     token ... encoded token string
@@ -47,7 +48,7 @@ def decode_web_token(token, key_name, subject=None, algorithms=['RS256']):
     keys = zope.component.getUtility(ICryptographicKeys)
     try:
         token_content = jwt.decode(
-            token, keys[key_name], algorithms=algorithms)
+            token, keys[key_name], audience=audience, algorithms=algorithms)
     except Exception as e:
         raise ValueError(e)
     if subject is not None and token_content.get('sub') != subject:
