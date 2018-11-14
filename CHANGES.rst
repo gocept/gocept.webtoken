@@ -6,6 +6,10 @@ gocept.webtoken
 
 - Change license from ZPL to MIT.
 
+- Add support for Python 3.7.
+
+- Drop support for Python 3.4.
+
 - Make subject check optional as some systems like Keycloak use a random
   uuid as the subject which is unknown for the decoder.
 
