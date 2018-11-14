@@ -1,7 +1,7 @@
 gocept.webtoken
 ===============
 
-3.0 (unreleased)
+3.0 (2018-11-14)
 ----------------
 
 - Change license from ZPL to MIT.
