@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gocept.webtoken',
-    version='2.1.dev0',
+    version='3.0.dev0',
 
     install_requires=[
         'cryptography',
@@ -16,7 +16,7 @@ setup(
 
     author='gocept <mail@gocept.com>',
     author_email='mail@gocept.com',
-    license='ZPL 2.1',
+    license='MIT',
     url='https://bitbucket.org/gocept/gocept.webtoken',
     keywords='jwt token webtoken ZCA',
     classifiers="""\
@@ -32,7 +32,7 @@ Topic :: Software Development
 Topic :: Software Development :: Libraries
 Topic :: Software Development :: Libraries :: Python Modules
 License :: OSI Approved
-License :: OSI Approved :: Zope Public License
+License :: OSI Approved :: MIT License
 Programming Language :: Python
 Programming Language :: Python :: 2
 Programming Language :: Python :: 2.7

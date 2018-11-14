@@ -1,10 +1,12 @@
 gocept.webtoken
 ===============
 
-2.1 (unreleased)
+3.0 (unreleased)
 ----------------
 
-- Made subject check optional as some systems like Keycloak use a random
+- Change license from ZPL to MIT.
+
+- Make subject check optional as some systems like Keycloak use a random
   uuid as the subject which is unknown for the decoder.
 
 - Add `audience` parameter which is required to decode tokens generated
