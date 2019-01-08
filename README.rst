@@ -5,9 +5,9 @@ The gocept.webtoken distribution
 This library helps you using JWT tokens with the Zope Component Architecture
 (ZCA).
 
-This package is compatible with Python version 2.7, 3.4, 3.5 and 3.6.
+This package is compatible with Python version 2.7, 3.5, 3.6 and 3.7.
 
-Copyright (c) 2015-2018 gocept gmbh & co kg
+Copyright (c) 2015-2019 gocept gmbh & co kg
 
 All Rights Reserved.
 
