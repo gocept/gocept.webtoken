@@ -17,7 +17,7 @@ setup(
     author='gocept <mail@gocept.com>',
     author_email='mail@gocept.com',
     license='MIT',
-    url='https://bitbucket.org/gocept/gocept.webtoken',
+    url='https://github.com/gocept/gocept.webtoken',
     keywords='jwt token webtoken ZCA',
     classifiers="""\
 Development Status :: 4 - Beta

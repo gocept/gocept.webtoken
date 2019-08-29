@@ -6,6 +6,8 @@ gocept.webtoken
 
 - Nothing changed yet.
 
+- Migrate to Github.
+
 
 3.0 (2018-11-14)
 ----------------
