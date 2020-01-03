@@ -4,10 +4,11 @@ gocept.webtoken
 3.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
 - Migrate to Github.
 
+- Test with Python 3.8 and PyPy3.
+
+- Stop testing with Python 3.5.
 
 3.0 (2018-11-14)
 ----------------
