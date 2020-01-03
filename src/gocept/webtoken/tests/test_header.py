@@ -68,10 +68,10 @@ def test_header__extract_token__7():
             return self.data[key]
 
         def __iter__(self):
-            return iter(self.data)
+            return iter(self.data)  # pragma: no cover only needed for instance
 
         def __len__(self):
-            return len(self.data)
+            return len(self.data)  # pragma: no cover only needed for instance
 
     headers = MyHeaders({'Authorization': 'Bearer <TOKEN>'})
     assert b'<TOKEN>' == extract_token(headers)
