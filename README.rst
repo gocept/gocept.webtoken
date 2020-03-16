@@ -2,6 +2,12 @@
 The gocept.webtoken distribution
 ================================
 
+.. image:: https://travis-ci.com/gocept/gocept.webtoken.svg?branch=master
+    :target: https://travis-ci.com/gocept/gocept.webtoken
+.. image:: https://coveralls.io/repos/github/gocept/gocept.webtoken/badge.svg
+    :target: https://coveralls.io/github/gocept/gocept.webtoken
+
+
 This library helps you using JWT tokens with the Zope Component Architecture
 (ZCA).
 
