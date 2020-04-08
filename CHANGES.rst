@@ -1,8 +1,8 @@
 gocept.webtoken
 ===============
 
-3.2 (unreleased)
-----------------
+3.1.post1 (2020-04-08)
+----------------------
 
 - Drop faulty ``python_requires`` in `setup.py`.
 
