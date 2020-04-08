@@ -1,7 +1,7 @@
 gocept.webtoken
 ===============
 
-3.1 (unreleased)
+3.1 (2020-04-08)
 ----------------
 
 - Migrate to Github.
