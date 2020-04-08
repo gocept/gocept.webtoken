@@ -1,6 +1,12 @@
 gocept.webtoken
 ===============
 
+3.2 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 3.1 (2020-04-08)
 ----------------
 
