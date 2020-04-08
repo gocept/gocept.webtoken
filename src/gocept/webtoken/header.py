@@ -1,4 +1,7 @@
-from collections import Mapping
+try:
+    from collections.abc import Mapping
+except ImportError:   # pragma: no cover only PY2
+    from collections import Mapping
 
 
 def create_authorization_header(token_or_dict):

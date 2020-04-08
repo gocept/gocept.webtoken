@@ -6,6 +6,7 @@ setup(
     name='gocept.webtoken',
     version='3.1.dev0',
 
+    python_requires='>=3.6, <4',
     install_requires=[
         'cryptography',
         'pyjwt',
