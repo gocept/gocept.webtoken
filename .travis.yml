@@ -8,6 +8,7 @@ python:
   - pypy
   - pypy3
 install: pip install tox-travis coveralls
+env: CRYPTOGRAPHY_ALLOW_OPENSSL_102=1
 script: tox
 after_success:
   - coverage combine
