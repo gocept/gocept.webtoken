@@ -4,7 +4,7 @@ gocept.webtoken
 3.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Use Github actions as CI.
 
 
 3.1.post1 (2020-04-08)

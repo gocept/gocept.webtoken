@@ -2,8 +2,9 @@
 The gocept.webtoken distribution
 ================================
 
-.. image:: https://travis-ci.com/gocept/gocept.webtoken.svg?branch=master
-    :target: https://travis-ci.com/gocept/gocept.webtoken
+.. image:: https://github.com/gocept/gocept.webtoken/workflows/tests/badge.svg
+    :target: https://github.com/gocept/gocept.webtoken/actions?query=workflow%3Atests
+
 .. image:: https://coveralls.io/repos/github/gocept/gocept.webtoken/badge.svg
     :target: https://coveralls.io/github/gocept/gocept.webtoken
 

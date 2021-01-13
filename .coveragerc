@@ -4,7 +4,8 @@ source = gocept.webtoken
 
 [report]
 precision = 2
-fail_under = 100
+# PY2 has to be back at 100 with PY3 only.
+fail_under = 99
 
 [html]
 directory = coverage-report

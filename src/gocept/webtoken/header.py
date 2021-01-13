@@ -14,7 +14,12 @@ def create_authorization_header(token_or_dict):
         token = token_or_dict['token']
     else:
         token = token_or_dict
-    return ('Authorization', 'Bearer {}'.format(token.decode('ascii')))
+
+    if not isinstance(token, str):
+        # PY2 jwt 2.0 (PY2 only) returns a string here
+        # jwt 2.0 should be required if we drop PY2 support.
+        token = token.decode('ascii')
+    return ('Authorization', 'Bearer {}'.format(token))
 
 
 def extract_token(request_headers_or_authorization_header):
