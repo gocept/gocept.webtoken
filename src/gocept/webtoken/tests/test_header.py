@@ -1,4 +1,5 @@
-from gocept.webtoken import create_authorization_header, extract_token
+from gocept.webtoken import create_authorization_header
+from gocept.webtoken import extract_token
 import collections
 import pytest
 

@@ -120,4 +120,3 @@ under the key ``data``::
 
     >>> {'your': 'data'} == result['data']
     True
-
