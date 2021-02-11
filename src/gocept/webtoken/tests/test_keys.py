@@ -1,8 +1,8 @@
 import gocept.webtoken.keys
 import os.path
+import pytest
 import shutil
 import tempfile
-import pytest
 
 
 @pytest.yield_fixture(scope='function')
