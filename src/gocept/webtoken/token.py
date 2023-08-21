@@ -30,14 +30,8 @@ def create_web_token(
     if expires_in is not None:
         args['exp'] = now + datetime.timedelta(seconds=expires_in)
     token = jwt.encode(args, keys[key_name], algorithm=algorithm)
-    try:
-        # with jwt 2.0 the args-dict is not modified in place anymore. So we
-        # have to change the time by ourselves. PY2
-        args['iat'] = calendar.timegm(args['iat'].utctimetuple())
-        args['nbf'] = calendar.timegm(args['nbf'].utctimetuple())
-    except AttributeError:
-        # We already have a timestamp.
-        pass
+    args['iat'] = calendar.timegm(args['iat'].utctimetuple())
+    args['nbf'] = calendar.timegm(args['nbf'].utctimetuple())
 
     return {'token': token, 'data': args}
 
@@ -62,6 +56,6 @@ def decode_web_token(token, key_name, subject=None, algorithms=['RS256'],
     except Exception as e:
         raise ValueError(e)
     if subject is not None and token_content.get('sub') != subject:
-        raise ValueError("Subject mismatch '%s' != '%s'" % (
+        raise ValueError("Subject mismatch '{}' != '{}'".format(
             subject, token_content.get('sub')))
     return token_content

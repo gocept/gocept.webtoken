@@ -1,7 +1,4 @@
-try:
-    from collections.abc import Mapping
-except ImportError:   # pragma: no cover only PY2
-    from collections import Mapping
+from collections.abc import Mapping
 
 
 def create_authorization_header(token_or_dict):
@@ -16,10 +13,8 @@ def create_authorization_header(token_or_dict):
         token = token_or_dict
 
     if not isinstance(token, str):
-        # PY2 jwt 2.0 (PY2 only) returns a string here
-        # jwt 2.0 should be required if we drop PY2 support.
         token = token.decode('ascii')
-    return ('Authorization', 'Bearer {}'.format(token))
+    return ('Authorization', f'Bearer {token}')
 
 
 def extract_token(request_headers_or_authorization_header):

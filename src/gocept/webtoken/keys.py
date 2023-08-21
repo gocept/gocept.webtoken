@@ -8,7 +8,7 @@ log = logging.getLogger(__name__)
 
 
 @zope.interface.implementer(ICryptographicKeys)
-class CryptographicKeys(object):
+class CryptographicKeys:
     """Provides cryptographic keys for different purposes."""
 
     def __init__(self, keys_dir, names):

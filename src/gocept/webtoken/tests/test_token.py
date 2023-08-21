@@ -37,10 +37,10 @@ def test_token__decode_web_token__5(token):
     token_dict = token.create('jwt-access-private', 'app', data={'foo': 'bar'})
     decoded = token.decode(token_dict, 'jwt-access-public', 'app')
     assert (
-        sorted([u'iss', u'iat', u'data', u'sub', u'nbf']) ==
+        sorted(['iss', 'iat', 'data', 'sub', 'nbf']) ==
         sorted(decoded.keys()))
     assert 'issuer' == decoded['iss']
-    assert {u'foo': u'bar'} == decoded['data']
+    assert {'foo': 'bar'} == decoded['data']
     # iat, nbf and exp have been checked implicitly by validation upon
     # decoding
 
@@ -50,7 +50,7 @@ def test_token__decode_web_token__6(token):
     token_dict = token.create('jwt-access-private', 'app', data={'foo': 'bar'})
     decoded = token.decode(token_dict, 'jwt-access-public', None)
     assert (
-        sorted([u'iss', u'iat', u'data', u'sub', u'nbf']) ==
+        sorted(['iss', 'iat', 'data', 'sub', 'nbf']) ==
         sorted(decoded.keys()))
 
 

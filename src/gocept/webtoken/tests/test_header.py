@@ -59,7 +59,7 @@ def test_header__extract_token__6():
 
 def test_header__extract_token__7():
     """`extract_token()` extracts token from given Mapping object."""
-    class MyHeaders(collections.Mapping):
+    class MyHeaders(collections.abc.Mapping):
         """Example headers implementation based on `Mapping ."""
 
         def __init__(self, data):

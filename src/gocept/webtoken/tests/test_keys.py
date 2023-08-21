@@ -5,7 +5,7 @@ import shutil
 import tempfile
 
 
-@pytest.yield_fixture(scope='function')
+@pytest.fixture(scope='function')
 def keys_dir():
     keys_dir = tempfile.mkdtemp()
     yield keys_dir

@@ -6,11 +6,11 @@ from setuptools import setup
 
 setup(
     name='gocept.webtoken',
-    version='3.2.dev0',
-
+    version='4.0.dev0',
+    python_requires='>=3.7',
     install_requires=[
         'cryptography',
-        'pyjwt',
+        'pyjwt >= 2',
         'setuptools',
         'zope.interface',
         'zope.component',
@@ -36,12 +36,13 @@ Topic :: Software Development :: Libraries :: Python Modules
 License :: OSI Approved
 License :: OSI Approved :: MIT License
 Programming Language :: Python
-Programming Language :: Python :: 2
-Programming Language :: Python :: 2.7
 Programming Language :: Python :: 3
 Programming Language :: Python :: 3.6
 Programming Language :: Python :: 3.7
 Programming Language :: Python :: 3.8
+Programming Language :: Python :: 3.9
+Programming Language :: Python :: 3.10
+Programming Language :: Python :: 3.11
 Programming Language :: Python :: Implementation
 Programming Language :: Python :: Implementation :: CPython
 Programming Language :: Python :: Implementation :: PyPy
