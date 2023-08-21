@@ -6,7 +6,7 @@ gocept.webtoken
 
 - Drop support for Python 2.7, 3.5, 3.6.
 
-- Use Github actions as CI.
+- Add support for Python 3.9, 3.10, 3.11.
 
 
 3.1.post1 (2020-04-08)
