@@ -6,7 +6,7 @@ from setuptools import setup
 
 setup(
     name='gocept.webtoken',
-    version='4.0',
+    version='4.1.dev0',
     python_requires='>=3.7',
     install_requires=[
         'cryptography',
