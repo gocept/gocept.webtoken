@@ -1,7 +1,7 @@
 gocept.webtoken
 ===============
 
-3.2 (unreleased)
+4.0 (unreleased)
 ----------------
 
 - Use Github actions as CI.
