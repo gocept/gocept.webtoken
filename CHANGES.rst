@@ -1,7 +1,7 @@
 gocept.webtoken
 ===============
 
-4.0 (unreleased)
+4.0 (2023-08-21)
 ----------------
 
 - Drop support for Python 2.7, 3.5, 3.6.
